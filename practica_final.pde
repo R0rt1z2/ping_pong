@@ -289,6 +289,7 @@ void keyPressed() {
           }          
           in_menu = true;
           draw_menu(1);
+          reset();
       }
     } else if (keyCode == 's' || keyCode == 'S')
     {
