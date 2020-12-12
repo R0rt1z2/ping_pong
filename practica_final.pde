@@ -283,6 +283,10 @@ void keyPressed() {
     {
       if (dead != true)
       {
+          if (game_music.isPlaying())
+          {
+              game_music.stop();
+          }          
           in_menu = true;
           draw_menu(1);
       }
