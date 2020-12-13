@@ -19,8 +19,8 @@ boolean is_game_finished = false;
 boolean in_menu = false;
 boolean in_instructions = false;
 boolean dead = false;
-boolean show_points = false;
-boolean show_fps = false;
+boolean show_points = true;
+boolean show_fps = true;
 boolean rainbow_mode = false;
 
 /* Debug Mode */
@@ -40,7 +40,7 @@ void setup() {
   surface.setTitle("Ping-Pong!");
 
   /* Neteja-ho tot */
-  reset();
+  reset(0);
 
   /* Inicialitza els sons/musica */
   colision = new SoundFile(this, "colision.mp3");
@@ -58,7 +58,7 @@ void setup() {
   draw_menu(1);
 }
 
-void reset() {
+void reset(int reset_booleans) {
   /* Posiciona la pilota al mig de la pantalla */
   x = width/2;
   y = height/2;
@@ -68,9 +68,12 @@ void reset() {
   speedY = random(3, 5);
   
   /* Desactiva-ho tot */
-  rainbow_mode = false;
-  show_points = false;
-  show_fps = false;
+  if (reset_booleans == 1)
+  {
+    rainbow_mode = false;
+    show_points = false;
+    show_fps = false;
+  }
 }
 
 void draw() 
@@ -139,7 +142,7 @@ void draw()
       {
         /* Carrega la foto del fons del menú */
         image(background, 0, 0, width, height);
-        reset();
+        reset(1);
         
         /* Estem morts, atura el joc */
         dead = true;
@@ -302,7 +305,7 @@ void keyPressed() {
           }          
           in_menu = true;
           draw_menu(1);
-          reset();
+          reset(1);
       }
     } 
     else if (keyCode == 's' || keyCode == 'S')
