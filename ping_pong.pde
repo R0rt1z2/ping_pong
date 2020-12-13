@@ -20,6 +20,7 @@ boolean in_menu = false;
 boolean in_instructions = false;
 boolean dead = false;
 boolean show_points = false;
+boolean show_fps = false;
 boolean rainbow_mode = false;
 
 /* Debug Mode */
@@ -69,6 +70,7 @@ void reset() {
   /* Desactiva-ho tot */
   rainbow_mode = false;
   show_points = false;
+  show_fps = false;
 }
 
 void draw() 
@@ -123,6 +125,13 @@ void draw()
         textSize(25);
         text("Punts: " + points, width/2-100, 50);
         textSize(10);
+      }
+      
+      /* Mostra els FPS */
+      if (show_fps == true)
+      {
+        textSize(8);
+        text("FPS: " + int(frameRate), width/2-50, height/2+330);
       }
 
       /* Detecta si la pilota no ha xocat amb la plataforma */
@@ -236,10 +245,12 @@ void draw_instructions() {
 
   textSize(15);
   text("- L'objectiu del joc és fer que la pilota xoqui contra la paret\nper aconseguir el màxim nombre de punts possible.\n", 50, 150);
-  text("- Si la pilota no xoca amb la plataforma que hi ha a la dreta,\n el joc s'acaba i perds.", 50, 250);
-  text("- Cada cop que la pilota toca la paret esquerra, s'incrementa 1\n punt al comptador.", 50, 350);
-  text("- Pots activar la visualització dels punts que has aconseguit\n prement la tecla 's/S'.", 50, 450);
-  text("- Pots fer el joc més divertit prement la tecla 'r/R' per\n activar el mode 'multicolor'.", 50, 550);
+  text("- Si la pilota no xoca amb la plataforma que hi ha a la dreta,\n el joc s'acaba i perds.", 50, 220);
+  text("- Cada cop que la pilota toca la paret esquerra, s'incrementa 1\n punt al comptador.", 50, 290);
+  text("- Pots activar la visualització dels punts que has aconseguit\n prement la tecla 's/S'.", 50, 360);
+  text("- Pots fer el joc més divertit prement la tecla 'r/R' per\n activar el mode 'multicolor'.", 50, 430);
+  text("- Pots activar la visualització dels FPS del joc prement\n la tecla 'f/F'.", 50, 500);
+  text("- Pots tornar al menú en qualsevol moment fent servir la\n tecla 'm/M'.", 50, 570);
 
   textSize(20);
   text("Prem la tecla ENTER per tornar al menú", 150, 650);
@@ -293,13 +304,22 @@ void keyPressed() {
           draw_menu(1);
           reset();
       }
-    } else if (keyCode == 's' || keyCode == 'S')
+    } 
+    else if (keyCode == 's' || keyCode == 'S')
     {
       if (show_points == true)
         show_points = false;
       else
         show_points = true;
-    } else if (keyCode == 'r' || keyCode == 'R')
+    } 
+    else if (keyCode == 'f' || keyCode == 'F')
+    {
+      if (show_fps == true)
+        show_fps = false;
+      else
+        show_fps = true;
+    }
+    else if (keyCode == 'r' || keyCode == 'R')
     {
       if (rainbow_mode == true)
         rainbow_mode = false;
