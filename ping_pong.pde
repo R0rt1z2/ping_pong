@@ -175,7 +175,7 @@ void draw()
     /* Mostra l'hora actual */
     draw_menu(menu_selection);
     textSize(15);
-    text(day()+"/"+month()+"/"+year()+" - "+hour()+":"+minute()+":"+second(), width/2+200, height/2+330);
+    text(day()+"/"+month()+"/"+year()+" - "+hour()+":"+minute()+":"+second(), width/2+170, height/2+330);
   }
 }
 
@@ -200,10 +200,10 @@ void draw_menu(int selection)
 
   if (DEBUG_MODE == true)
   {
-    text("[*] Debug Mode ON", width/2+200, height/2-300);
+    text("[*] Debug Mode ON", width/2+170, height/2-300);
   } else
   {
-    text("[*] Debug Mode OFF", width/2+400, height/2-350);
+    text("[*] Debug Mode OFF", width/2+170, height/2-300);
   }
 
   text("Ping-Pong Version " + GAME_VERSION, width/2-480, height/2+330);
