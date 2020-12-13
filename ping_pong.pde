@@ -172,7 +172,7 @@ void draw()
     /* Mostra l'hora actual */
     draw_menu(menu_selection);
     textSize(15);
-    text(day()+"/"+month()+"/"+year()+" - "+hour()+":"+minute()+":"+second(), width/2+350, height/2+350);
+    text(day()+"/"+month()+"/"+year()+" - "+hour()+":"+minute()+":"+second(), width/2+200, height/2+330);
   }
 }
 
@@ -193,32 +193,32 @@ void draw_menu(int selection)
 
   /* Carrega el text del menú */
   textSize(15);
-  text("Roger Ortiz Leal - Tecnologies 2020-2021", width/2-650, height/2-350);
+  text("Roger Ortiz Leal - Tecnologies 2020-2021", width/2-480, height/2-300);
 
   if (DEBUG_MODE == true)
   {
-    text("[*] Debug Mode ON", width/2+400, height/2-350);
+    text("[*] Debug Mode ON", width/2+200, height/2-300);
   } else
   {
     text("[*] Debug Mode OFF", width/2+400, height/2-350);
   }
 
-  text("Ping-Pong Version " + GAME_VERSION, width/2-650, height/2+350);
+  text("Ping-Pong Version " + GAME_VERSION, width/2-480, height/2+330);
 
-  textSize(20);
-  text("(Prem la tecla 'i' per veure com funciona el joc)", width/2-530, height/2+200);
+  textSize(15);
+  text("(Prem la tecla 'i' per veure com funciona el joc)", width/2-380, height/2+200);
 
-  textSize(50);
-  text("Ping Pong!", width/2-300, height/2-50);
+  textSize(40);
+  text("Ping Pong!", width/2-200, height/2-50);
 
   /* Selecció */
   if (selection == 1)
   {
-    text("> Start", width/2-400, height/2+100);
+    text("> Start", width/2-300, height/2+100);
     text("Exit", width/2+75, height/2+100);
   } else if (selection == 2)
   {
-    text("Start", width/2-400, height/2+100);
+    text("Start", width/2-300, height/2+100);
     text("> Exit", width/2+50, height/2+100);
   }
 }
@@ -228,18 +228,18 @@ void draw_instructions() {
   image(background, 0, 0, width, height);
 
   /* Mostra les instruccions del joc */
-  textSize(50);
-  text("INSTRUCCIONS DEL JOC", 200, 150);
+  textSize(35);
+  text("INSTRUCCIONS DEL JOC", 150, 100);
+
+  textSize(15);
+  text("- L'objectiu del joc és fer que la pilota xoqui contra la paret\nper aconseguir el màxim nombre de punts possible.\n", 50, 150);
+  text("- Si la pilota no xoca amb la plataforma que hi ha a la dreta,\n el joc s'acaba i perds.", 50, 250);
+  text("- Cada cop que la pilota toca la paret esquerra, s'incrementa 1\n punt al comptador.", 50, 350);
+  text("- Pots activar la visualització dels punts que has aconseguit\n prement la tecla 's/S'.", 50, 450);
+  text("- Pots fer el joc més divertit prement la tecla 'r/R' per\n activar el mode 'multicolor'.", 50, 550);
 
   textSize(20);
-  text("- L'objectiu del joc és fer que la pilota xoqui contra la paret\nper aconseguir el màxim nombre de punts possible.\n", 50, 200);
-  text("- Si la pilota no xoca amb la plataforma que hi ha a la dreta,\n el joc s'acaba i perds.", 50, 300);
-  text("- Cada cop que la pilota toca la paret esquerra, s'incrementa 1\n punt al comptador.", 50, 400);
-  text("- Pots activar la visualització dels punts que has aconseguit\n prement la tecla 's/S'.", 50, 500);
-  text("- Pots fer el joc més divertit prement la tecla 'r/R' per\n activar el mode 'multicolor'.", 50, 600);
-
-  textSize(30);
-  text("Prem la tecla ENTER per tornar al menú", 170, 700);
+  text("Prem la tecla ENTER per tornar al menú", 150, 650);
 }
 
 void keyPressed() {
