@@ -34,6 +34,9 @@ int colornum;
 
 void setup() {
   size(1024, 700);
+  
+  /* Títol del joc */
+  surface.setTitle("Ping-Pong!");
 
   /* Neteja-ho tot */
   reset();
