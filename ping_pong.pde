@@ -33,8 +33,7 @@ color[] colors = {#FA0303, #B305FF, #00C647, #F5BC00};
 int colornum;
 
 void setup() {
-  /* El joc es juga en pantalla completa */
-  fullScreen();
+  size(1024, 700);
 
   /* Neteja-ho tot */
   reset();
