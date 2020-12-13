@@ -121,7 +121,7 @@ void draw()
       if (show_points == true)
       {
         textSize(25);
-        text("Punts: " + points, width/2-40, 50);
+        text("Punts: " + points, width/2-100, 50);
         textSize(10);
       }
 
